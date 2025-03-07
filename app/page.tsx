@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -14,88 +16,66 @@ import ContactForm from "@/app/_components/contact-form";
 import ClientLogos from "@/app/_components/client-logos";
 import BlogCard from "@/app/_components/blog-cards";
 import Footer from "./_components/footer";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
     <>
       <main className="relative">
         {/* menu fixo */}
-        <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0a1017] pl-44 pr-44 py-4">
+        <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0a1017] pl-5 pr-5 py-4 sm:px-10 md:px-20">
           <div className="container mx-auto flex items-center justify-between px-4">
             <div className="flex items-center">
               <Link href="/">
                 <Image
                   src="/logo-grow.png"
                   alt="logo grow media"
-                  width={100}
+                  width={400}
                   height={50}
                 />
               </Link>
             </div>
-            <div className="hidden md:flex space-x-20 text-[12px]">
-              <Link
-                href="#home"
-                className="text-yellow-400 hover:text-yellow-300"
-              >
-                Home
-              </Link>
-              <Link href="#sobre" className="text-white hover:text-yellow-300">
-                Sobre
-              </Link>
-              <Link
-                href="#estrategia"
-                className="text-white hover:text-yellow-300"
-              >
-                Estratégia
-              </Link>
-              <Link
-                href="#contato"
-                className="text-white hover:text-yellow-300"
-              >
-                Contato
-              </Link>
-              <Link href="#blog" className="text-white hover:text-yellow-300">
-                Blog
-              </Link>
+            <div className="hidden md:flex space-x-10 text-[12px]">
+              <Link href="#home" className="text-yellow-400 hover:text-yellow-300">Home</Link>
+              <Link href="#sobre" className="text-white hover:text-yellow-300">Sobre</Link>
+              <Link href="#estrategia" className="text-white hover:text-yellow-300">Estratégia</Link>
+              <Link href="#contato" className="text-white hover:text-yellow-300">Contato</Link>
+              <Link href="#blog" className="text-white hover:text-yellow-300">Blog</Link>
             </div>
           </div>
         </nav>
 
         {/* sessão hero */}
-        <section
-          id="home"
-          className="h-screen flex items-center justify-center relative overflow-hidden z-0"
-        >
+        <section id="home" className="h-screen flex items-center justify-center relative overflow-hidden z-0">
           <div className="inset-0 z-0 fixed">
-            <video
-              src=""
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="brightness-50 w-full h-[610px] rounded-lg object-cover"
-            />
+            <video src="/universe3.mp4" autoPlay loop muted playsInline className="brightness-50 w-full h-full rounded-lg object-cover" />
           </div>
           <div className="container mx-auto px-4 z-10 text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            <motion.h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.3 }}>
               SUA EMPRESA MERECE{" "}
               <span className="relative inline-block">
                 BRILHAR.
                 <span className="absolute bottom-0 left-0 w-full h-1 bg-[#FFCC00]"></span>
               </span>
-            </h1>
+            </motion.h1>
           </div>
-          <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
-            <ChevronDown size={32} className="text-[#FFCC00]" />
+          <div className="absolute cursor-pointer bottom-10 left-1/2 transform-translate-x-1/2 text-white animate-bounce">
+            <Link href="#sobre" className="justify-center flex items-center flex-col">
+              <span className="text-[#FFCC00]">Sobre</span>
+              <ChevronDown size={32} className="text-[#FFCC00]" />
+            </Link>
           </div>
         </section>
 
         {/* sessão Sobre */}
         <ParallaxSection id="sobre" className="bg-[#FFCC00]">
-          <div className="container mx-auto px-4 pl-44 py-20">
+          <div className="container mx-auto px-4 sm:px-10 md:px-24 py-20">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-4xl font-semibold mb-2 text-gray-800">
+                <h2 className="text-4xl sm:text-5xl font-semibold mb-2 text-gray-800">
                   Sobre <br />
                   <div className="flex gap-1">
                     <span className="text-4xl">a</span>
@@ -139,13 +119,13 @@ export default function Home() {
 
         {/* sessão estratégias */}
         <ParallaxSection id="estrategia" className="bg-[#0a1017] text-white">
-          <div className="container mx-auto px-4 pl-44 pr-44 py-20">
+          <div className="container mx-auto px-4 sm:px-10 md:px-24 py-20">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl font-bold mb-6">
+                <h2 className="text-3xl sm:text-4xl font-bold mb-6">
                   Sua marca mais <br />
                   <span className="flex items-center">
-                    <ChevronRight className="text-yellow-[#FFCC00] mr-2" />
+                    <ChevronRight className="text-[#FFCC00] mr-2" />
                     conhecida,
                   </span>
                   <span className="flex items-center">
@@ -153,19 +133,19 @@ export default function Home() {
                   </span>
                   <span className="flex items-center">recomendada.</span>
                 </h2>
-                <p className="my-6 text-[14px]">
+                <p className="my-6 text-[14px] sm:text-[16px]">
                   A Grow pode ser hoje a sua agência digital, ou você pode
                   continuar procurando. O que podemos garantir é que nosso
                   trabalho é focado em resultados e crescimento real para o seu
                   negócio.
                 </p>
-                <p className="my-6 text-[16px]">
+                <p className="my-6 text-[16px] sm:text-[18px]">
                   No digital e no off-line, trabalhamos como parceiros
                   estratégicos da sua marca para construir as melhores soluções
                   e atingir os objetivos de negócios que você tem para a sua
                   empresa.
                 </p>
-                <p className="my-6 text-sm">
+                <p className="my-6 text-sm sm:text-[14px]">
                   *Baseado em dados e gráficos de nossos principais clientes.
                 </p>
                 <Link
@@ -177,7 +157,8 @@ export default function Home() {
               </div>
               <div className="relative grid grid-cols-2 gap-4">
                 <div className="h-24 w-24 bg-[#FFCC00] rounded-lg ml-auto"></div>
-                <div className="h-24 w-24 bg-[#FFCC00] rounded-lg mt-12"></div>
+                <Image src="/growLogoIcon.png" alt="logo icone grow" width={250} height={100} className="absolute z-50 ml-24"/>
+                <div className="h-24 w-24 bg-[#FFCC00] rounded-lg mt-24"></div>
               </div>
             </div>
           </div>
@@ -185,8 +166,8 @@ export default function Home() {
 
         {/* sessão clientes */}
         <ParallaxSection className="bg-[#0a1017] text-white border-t border-gray-800">
-          <div className="container mx-auto pl-44 pr-44 px-4 py-16">
-            <h2 className="text-3xl font-bold mb-12">
+          <div className="container mx-auto px-4 sm:px-10 md:px-24 py-16">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-12">
               Marcas que <br />
               <span className="flex items-center">
                 <ChevronRight className="text-[#FFCC00] mr-2" />
@@ -200,15 +181,15 @@ export default function Home() {
 
         {/* sessão blog */}
         <ParallaxSection id="blog" className="bg-gray-100">
-          <div className="container mx-auto px-4 py-16">
-            <h2 className="flex items-center text-2xl font-bold mb-12">
+          <div className="container mx-auto px-4 sm:px-10 md:px-24 py-16">
+            <h2 className="flex items-center text-2xl sm:text-3xl font-bold mb-12">
               <ArrowRight className="text-yellow-[#FFCC00] mr-2" />
               blog
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="col-span-1">
                 <div className="bg-yellow-[#FFCC00] p-8 rounded-lg h-full flex flex-col justify-center">
-                  <h3 className="text-3xl font-bold mb-4">
+                  <h3 className="text-3xl sm:text-4xl font-bold mb-4">
                     Conteúdos <br />
                     especiais <br />
                     para sua <br />
@@ -230,7 +211,7 @@ export default function Home() {
         <section id="contato" className="relative">
           <div className="grid grid-cols-1 md:grid-cols-2">
             <div className="bg-[#FFCC00] p-8 md:p-16">
-              <h2 className="text-3xl font-bold mb-8">
+              <h2 className="text-3xl sm:text-4xl font-bold mb-8">
                 Vamos <br />
                 conversar <br />
                 sobre a sua <br />
@@ -242,7 +223,7 @@ export default function Home() {
               >
                 <Mail size={20} />
               </Link>
-              <p className="text-sm max-w-xs mb-12">
+              <p className="text-sm sm:text-base max-w-xs mb-12">
                 Preencha o formulário ao lado para que nossa equipe entre em
                 contato com você e conheça mais sobre a sua empresa.
               </p>
@@ -263,44 +244,8 @@ export default function Home() {
             </div>
           </div>
         </section>
-        {/* Footer 
-      <footer className="bg-[#0a1017] text-white py-8 border-t border-gray-800">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
-            <div className="mb-4 md:mb-0">
-              <p className="text-sm text-gray-400">E-mail:</p>
-              <Link
-                href="mailto:contato@shine.com.br"
-                className="text-sm hover:text-[#FFCC00]"
-              >
-                contato@shine.com.br
-              </Link>
-            </div>
-            <div className="mb-4 md:mb-0">
-              <p className="text-sm text-gray-400">Telefone:</p>
-              <Link
-                href="tel:+554899990000"
-                className="text-sm hover:text-[#FFCC00]"
-              >
-                +55 48 9999 0000
-              </Link>
-            </div>
-            <div className="mb-8 md:mb-0">
-              <p className="text-sm text-gray-400">© 2025, Agência Shine</p>
-            </div>
-          </div>
-          <div className="mt-8 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-start md:items-center">
-            <div className="text-[#FFCC00] font-bold text-xl mb-4 md:mb-0">
-              Shine
-            </div>
-            <div className="text-xs text-gray-400">
-              Rua José Augusto, XX - Centro São Francisco - Bairro Progresso/SC
-            </div>
-          </div>
-        </div>
-      </footer> */}
+        <Footer />
       </main>
-      <Footer />
     </>
   );
 }

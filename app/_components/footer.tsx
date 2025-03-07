@@ -4,13 +4,13 @@ import { Facebook, Twitter, Rss, Globe } from "lucide-react"
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0a1017] text-white py-12 px-6 z-50">
+    <footer className="bg-[#0a1017] relative text-white py-12 px-6">
       <div className="max-w-6xl mx-auto">
         {/* Top section with logo and navigation */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 pl-24 ">
           {/* Logo section */}
           <div>
-            <Image src="/logo-grow.png" alt="logo agencia grow" width={150} height={150}/>
+            <Image src="/logo-grow.png" alt="logo agencia grow" width={450} height={150}/>
           </div>
 
           {/* Navigation columns */}
@@ -130,7 +130,7 @@ export default function Footer() {
               
             </Link>
           </div>
-          <div className="text-sm text-gray-400">©Copyright. All rights reserved.</div>
+          <div className="text-sm text-gray-400">©Copyright | 2025</div>
         </div>
       </div>
     </footer>

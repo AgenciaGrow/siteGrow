@@ -6,7 +6,7 @@ import "./globals.css"
 const poppins = Poppins({ weight: ["400", "500"], subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Grow",
+  title: "Grow | Media",
   description: "Agência de marketing e estratégia.",
 }
 
