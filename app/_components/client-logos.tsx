@@ -1,33 +1,62 @@
-import Image from "next/image";
+"use client";
 
-export default function ClientLogos() {
-    const logos = [
-      { name: "Metro", logo: "/placeholder.svg?height=40&width=100" },
-      { name: "Martins", logo: "/placeholder.svg?height=40&width=100" },
-      { name: "Reale", logo: "/placeholder.svg?height=40&width=100" },
-      { name: "Group", logo: "/placeholder.svg?height=40&width=100" },
-      { name: "Acon", logo: "/placeholder.svg?height=40&width=100" },
-      { name: "Boomberg", logo: "/placeholder.svg?height=40&width=100" },
-      { name: "Sun Center", logo: "/placeholder.svg?height=40&width=100" },
-      { name: "Hocks", logo: "/placeholder.svg?height=40&width=100" },
-      { name: "Jet", logo: "/placeholder.svg?height=40&width=100" },
-      { name: "Coinbase", logo: "/placeholder.svg?height=40&width=100" },
-    ]
-  
-    return (
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 items-center">
-        {logos.map((logo, index) => (
-          <div key={index} className="flex justify-center">
-            <Image
-              src={logo.logo || "/mkt.webp"}
-              alt={`${logo.name} logo`}
-              width={100} height={100}
-              className="h-10 object-contain opacity-70 hover:opacity-100 transition-opacity"
-            />
-          </div>
-        ))}
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import Image from 'next/image';
+
+const ClientLogos = () => {
+  const companies = [
+    { id: 1, logo: '/images/company1.png', alt: 'Logo da Empresa 1' },
+    { id: 2, logo: '/images/company2.png', alt: 'Logo da Empresa 2' },
+    { id: 3, logo: '/images/company3.png', alt: 'Logo da Empresa 3' },
+    { id: 4, logo: '/images/company4.png', alt: 'Logo da Empresa 4' },
+    { id: 5, logo: '/images/company5.png', alt: 'Logo da Empresa 5' },
+    { id: 6, logo: '/images/company6.png', alt: 'Logo da Empresa 6' },
+  ];
+
+  return (
+    <section className="py-12 bg-[#FFCC00]">
+      <div className="container mx-auto px-4">
+        <Swiper
+          modules={[Autoplay]}
+          spaceBetween={30}
+          slidesPerView={2}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          loop={true}
+          breakpoints={{
+            640: {
+              slidesPerView: 3,
+            },
+            1024: {
+              slidesPerView: 4,
+            },
+            1280: {
+              slidesPerView: 5,
+            },
+          }}
+          className="w-full"
+        >
+          {companies.map((company) => (
+            <SwiperSlide key={company.id}>
+              <div className="flex items-center justify-center h-24 bg-[#FFCC00] rounded-lg shadow-md p-4">
+                <Image
+                  src={company.logo}
+                  alt={company.alt}
+                  width={150}
+                  height={80}
+                  className="object-contain"
+                />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
-    )
-  }
-  
-  
+    </section>
+  );
+};
+
+export default ClientLogos;
