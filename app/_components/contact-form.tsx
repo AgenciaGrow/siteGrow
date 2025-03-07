@@ -35,7 +35,7 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      <div>
+      <div className="mt-10">
         <label htmlFor="name" className="block text-sm text-gray-400 mb-1">
           Nome
         </label>

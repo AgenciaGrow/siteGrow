@@ -24,7 +24,7 @@ export default function Home() {
     <>
       <main className="relative">
         {/* menu fixo */}
-        <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0a1017] pl-5 pr-5 py-4 sm:px-10 md:px-20">
+        <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0a1017] bg-opacity-95 pl-5 pr-5 py-4 sm:px-10 md:px-20">
           <div className="container mx-auto flex items-center justify-between px-4">
             <div className="flex items-center">
               <Link href="/">
@@ -53,13 +53,16 @@ export default function Home() {
                 Estratégia
               </Link>
               <Link
+                href="#serviços"
+                className="text-white hover:text-yellow-300"
+              >
+                Serviços
+              </Link>
+              <Link
                 href="#contato"
                 className="text-white hover:text-yellow-300"
               >
                 Contato
-              </Link>
-              <Link href="#blog" className="text-white hover:text-yellow-300">
-                Blog
               </Link>
             </div>
           </div>
@@ -99,7 +102,6 @@ export default function Home() {
               href="#sobre"
               className="justify-center flex items-center flex-col"
             >
-              <span className="text-[#FFCC00]">Sobre</span>
               <ChevronDown size={32} className="text-[#FFCC00]" />
             </Link>
           </div>
@@ -107,13 +109,13 @@ export default function Home() {
 
         {/* sessão Sobre */}
         <ParallaxSection id="sobre" className="bg-[#FFCC00]">
-          <div className="container mx-auto px-4 sm:px-10 md:px-24 py-20">
+          <div className="container mx-auto px-4 sm:px-10 md:px-24 py-20 mt-16">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-4xl sm:text-5xl font-semibold mb-2 text-gray-800">
-                  Sobre <br />
+                <h2 className="text-4xl sm:text-5xl font-semibold mb-2 text-gray-800 flex flex-row items-center sm:flex-col sm:items-start">
+                  Sobre
                   <div className="flex gap-1">
-                    <span className="text-4xl">a</span>
+                    <span className="text-4xl ml-2">a</span>
                     <span className="text-4xl">Grow</span>
                   </div>
                 </h2>
@@ -131,13 +133,6 @@ export default function Home() {
                   especializado para criar um plano de comunicação personalizado
                   para cada cliente e ter um relacionamento próximo com eles.
                 </p>
-                <Link
-                  href="#estrategia"
-                  className="inline-flex items-center mt-8 bg-gray-900 text-white px-6 py-3 rounded-full hover:bg-gray-800 transition-colors"
-                >
-                  Leia mais sobre nós{" "}
-                  <ChevronRight className="ml-2" size={16} />
-                </Link>
               </div>
               <div className="relative">
                 <Image
@@ -154,7 +149,7 @@ export default function Home() {
 
         {/* sessão estratégias */}
         <ParallaxSection id="estrategia" className="bg-[#0a1017] text-white">
-          <div className="container mx-auto px-4 sm:px-10 md:px-24 py-20">
+          <div className="container mx-auto mt-10 px-4 sm:px-10 md:px-24 py-20">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-3xl sm:text-4xl font-bold mb-6">
@@ -174,7 +169,7 @@ export default function Home() {
                   trabalho é focado em resultados e crescimento real para o seu
                   negócio.
                 </p>
-                <p className="my-6 text-[16px] sm:text-[18px]">
+                <p className="my-6 text-[14px] sm:text-[16px]">
                   No digital e no off-line, trabalhamos como parceiros
                   estratégicos da sua marca para construir as melhores soluções
                   e atingir os objetivos de negócios que você tem para a sua
@@ -197,7 +192,7 @@ export default function Home() {
                   alt="logo icone grow"
                   width={250}
                   height={100}
-                  className="absolute z-50 ml-24"
+                  className="absolute z-50 ml-20 sm:ml-0 left-1/2 transform -translate-x-1/2 sm:left-auto sm:transform-none"
                 />
                 <div className="h-24 w-24 bg-[#FFCC00] rounded-lg mt-24"></div>
               </div>
@@ -206,7 +201,7 @@ export default function Home() {
         </ParallaxSection>
 
         {/* sessão clientes */}
-        <ParallaxSection className="bg-[#FFCC00] text-white border-t border-gray-800">
+        <ParallaxSection id="clientes" className="bg-[#FFCC00] text-white border-t border-gray-800">
           <div className="container mx-auto px-4 sm:px-10 md:px-24 py-16">
             <h2 className="text-3xl sm:text-4xl font-bold mb-12">
               Empresas que <br />
@@ -219,12 +214,13 @@ export default function Home() {
             <ClientLogos />
           </div>
         </ParallaxSection>
-        
-        {/* sessão portifólio */}
-        <ParallaxSection id="estrategia" className="bg-[#0a1017] ">
-          <div className="container mx-auto px-4 sm:px-10 md:px-24 py-16">
-            <h2 className="text-3xl text-white sm:text-4xl font-bold mb-12">
-              Confira Nosso<br />
+
+        {/* sessão serviços */}
+        <ParallaxSection id="serviços" className="bg-[#0a1017] ">
+          <div className="container mt-20 mx-auto px-4 sm:px-10 md:px-24 py-16">
+            <h2 className="text-3xl text-white sm:text-4xl font-bold mb-2">
+              Confira Nosso
+              <br />
               <span className="flex items-center">
                 <ChevronRight className="text-white mr-2" />
                 Portifólio
@@ -235,7 +231,7 @@ export default function Home() {
         </ParallaxSection>
 
         {/* sessão Nosso Time */}
-        <ParallaxSection id="blog" className="bg-gray-100">
+        <ParallaxSection id="nosso-time" className="bg-gray-100">
           <div className="container mx-auto px-4 sm:px-10 md:px-24 py-16">
             <h2 className="flex items-center text-2xl sm:text-3xl font-bold mb-12">
               <ArrowRight className="text-yellow-[#FFCC00] mr-2" />
@@ -249,7 +245,7 @@ export default function Home() {
         <section id="contato" className="relative">
           <div className="grid grid-cols-1 md:grid-cols-2">
             <div className="bg-[#FFCC00] p-8 md:p-16">
-              <h2 className="text-3xl sm:text-4xl font-bold ml-6 mb-8">
+              <h2 className="text-3xl sm:text-4xl font-bold mt-10 ml-6 mb-8">
                 Vamos <br />
                 conversar <br />
                 sobre a sua <br />
@@ -282,7 +278,9 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <Footer />
+        <ParallaxSection>
+          <Footer />
+        </ParallaxSection>
       </main>
     </>
   );

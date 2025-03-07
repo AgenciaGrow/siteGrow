@@ -1,102 +1,105 @@
-import Link from "next/link"
-import Image from "next/image"
-import { Facebook, Twitter, Rss, Globe } from "lucide-react"
+import { Facebook, Instagram, Youtube } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
 
-export default function Footer() {
+const Footer = () => {
   return (
-    <footer className="bg-[#0a1017] relative text-white py-12 px-6">
+    <footer className="bg-[#0a1017] text-white py-12 px-6 z-50">
       <div className="max-w-6xl mx-auto">
         {/* Top section with logo and navigation */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 pl-24 ">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Logo section */}
-          <div>
-            <Image src="/logo-grow.png" alt="logo agencia grow" width={450} height={150}/>
+          <div className="flex justify-center">
+            <Image
+              src="/logo-grow.png"
+              alt="logo agencia grow"
+              width={200}
+              height={100}
+            />
           </div>
 
-          {/* Navigation columns */}
-          <div>
+          {/* Links section */}
+          <div className="text-center md:text-left">
+            <h3 className="font-semibold mb-4">Links Rápidos</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="#" className="hover:text-gray-300 transition-colors">
-                  WEEKLY THEMES
+                <Link
+                  href="#clientes"
+                  className="hover:text-gray-300 transition-colors"
+                >
+                  Clientes
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-gray-300 transition-colors">
-                  PRE-SALE FAQS
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-gray-300 transition-colors">
-                  SUBMIT A TICKET
+                <Link
+                  href="#nosso-time"
+                  className="hover:text-gray-300 transition-colors"
+                >
+                  Nosso Time
                 </Link>
               </li>
             </ul>
           </div>
 
-          <div>
+          {/* More links section */}
+          <div className="text-center md:text-left">
+            <h3 className="font-semibold mb-4">Navegação</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="#" className="hover:text-gray-300 transition-colors">
-                  SERVICES
+                <Link
+                  href="#"
+                  className="hover:text-gray-300 transition-colors"
+                >
+                  HOME
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-gray-300 transition-colors">
-                  THEME TWEAK
+                <Link
+                  href="#"
+                  className="hover:text-gray-300 transition-colors"
+                >
+                  SOBRE
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="hover:text-gray-300 transition-colors"
+                >
+                  ESTRATÉGIAS
                 </Link>
               </li>
             </ul>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-1 gap-8 md:gap-0">
+          {/* Services links section */}
+          <div className="text-center md:text-left">
+            <h3 className="font-semibold mb-4">Serviços</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="#" className="hover:text-gray-300 transition-colors">
-                  SHOWCASE
+                <Link
+                  href="#"
+                  className="hover:text-gray-300 transition-colors"
+                >
+                  SERVIÇOS
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-gray-300 transition-colors">
-                  WIDGETKIT
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-gray-300 transition-colors">
-                  SUPPORT
-                </Link>
-              </li>
-            </ul>
-
-            <ul className="space-y-2">
-              <li>
-                <Link href="#" className="hover:text-gray-300 transition-colors">
-                  ABOUT US
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-gray-300 transition-colors">
-                  CONTACT US
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-gray-300 transition-colors">
-                  AFFILIATES
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-gray-300 transition-colors">
-                  RESOURCES
+                <Link
+                  href="#"
+                  className="hover:text-gray-300 transition-colors"
+                >
+                  CONTATO
                 </Link>
               </li>
             </ul>
           </div>
         </div>
 
-        {/* Divider */}
+        {/* Divisão do footer */}
         <div className="border-t border-gray-800 my-6"></div>
 
-        {/* Social icons and copyright */}
+        {/* Redes Sociais e Copyright */}
         <div className="flex flex-col items-center">
           <div className="flex space-x-4 mb-4">
             <Link
@@ -109,31 +112,22 @@ export default function Footer() {
               href="#"
               className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gray-700 transition-colors"
             >
-              <Twitter size={16} />
+              <Instagram size={16} />
             </Link>
             <Link
               href="#"
               className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gray-700 transition-colors"
             >
-              <Rss size={16} />
-            </Link>
-            <Link
-              href="#"
-              className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gray-700 transition-colors"
-            >
-              <Globe size={16} />
-            </Link>
-            <Link
-              href="#"
-              className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gray-700 transition-colors"
-            >
-              
+              <Youtube size={16} />
             </Link>
           </div>
-          <div className="text-sm text-gray-400">©Copyright | 2025</div>
+          <div className="text-sm text-gray-400">
+            ©Copyright. All rights reserved.
+          </div>
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};
 
+export default Footer;
