@@ -24,7 +24,7 @@ export default function Home() {
     <>
       <main className="relative">
         {/* menu fixo */}
-        <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0a1017] bg-opacity-95 pl-5 pr-5 py-4 sm:px-10 md:px-20">
+        <nav className="fixed top-0 left-0 right-0 z-50 bg-[#101820] bg-opacity-95 pl-5 pr-5 py-4 sm:px-10 md:px-20">
           <div className="container mx-auto flex items-center justify-between px-4">
             <div className="flex items-center">
               <Link href="/">
@@ -108,7 +108,7 @@ export default function Home() {
         </section>
 
         {/* sessão Sobre */}
-        <ParallaxSection id="sobre" className="bg-[#FFCC00]">
+        <ParallaxSection id="sobre" className="bg-[#FFCd00]">
           <div className="container mx-auto px-4 sm:px-10 md:px-24 py-20 mt-16">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div>
@@ -148,14 +148,14 @@ export default function Home() {
         </ParallaxSection>
 
         {/* sessão estratégias */}
-        <ParallaxSection id="estrategia" className="bg-[#0a1017] text-white">
+        <ParallaxSection id="estrategia" className="bg-[#101820] text-white">
           <div className="container mx-auto mt-10 px-4 sm:px-10 md:px-24 py-20">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-3xl sm:text-4xl font-bold mb-6">
                   Sua marca mais <br />
                   <span className="flex items-center">
-                    <ChevronRight className="text-[#FFCC00] mr-2" />
+                    <ChevronRight className="text-[##FFCd00] mr-2" />
                     conhecida,
                   </span>
                   <span className="flex items-center">
@@ -180,13 +180,13 @@ export default function Home() {
                 </p>
                 <Link
                   href="#contato"
-                  className="inline-flex hover:outline items-center bg-[#FFCC00] text-gray-900 px-6 py-3 rounded-full hover:bg-[#FFCC00] transition-colors"
+                  className="inline-flex hover:outline items-center bg-[##FFCd00] text-gray-900 px-6 py-3 rounded-full hover:bg-[#FFCC00] transition-colors"
                 >
                   Vamos conversar <ArrowRight className="ml-2" size={16} />
                 </Link>
               </div>
               <div className="relative grid grid-cols-2 gap-4">
-                <div className="h-24 w-24 bg-[#FFCC00] rounded-lg ml-auto"></div>
+                <div className="h-24 w-24 bg-[##FFCd00] rounded-lg ml-auto"></div>
                 <Image
                   src="/growLogoIcon.png"
                   alt="logo icone grow"
@@ -194,19 +194,19 @@ export default function Home() {
                   height={100}
                   className="absolute z-50 ml-20 sm:ml-0 left-1/2 transform -translate-x-1/2 sm:left-auto sm:transform-none"
                 />
-                <div className="h-24 w-24 bg-[#FFCC00] rounded-lg mt-24"></div>
+                <div className="h-24 w-24 bg-[##FFCd00] rounded-lg mt-24"></div>
               </div>
             </div>
           </div>
         </ParallaxSection>
 
         {/* sessão clientes */}
-        <ParallaxSection id="clientes" className="bg-[#FFCC00] text-white border-t border-gray-800">
+        <ParallaxSection id="clientes" className="bg-[#101820] text-white border-t border-gray-800">
           <div className="container mx-auto px-4 sm:px-10 md:px-24 py-16">
             <h2 className="text-3xl sm:text-4xl font-bold mb-12">
               Empresas que <br />
               <span className="flex items-center">
-                <ChevronRight className="text-[#0a1017] mr-2" />
+                <ChevronRight className="text-[#101820] mr-2" />
                 confiam no
               </span>
               <span>nosso trabalho</span>
@@ -216,7 +216,7 @@ export default function Home() {
         </ParallaxSection>
 
         {/* sessão serviços */}
-        <ParallaxSection id="serviços" className="bg-[#0a1017] ">
+        <ParallaxSection id="serviços" className="bg-[#101820] ">
           <div className="container mt-20 mx-auto px-4 sm:px-10 md:px-24 py-16">
             <h2 className="text-3xl text-white sm:text-4xl font-bold mb-2">
               Confira Nosso
@@ -244,7 +244,7 @@ export default function Home() {
         {/* sessaõ contatos */}
         <section id="contato" className="relative">
           <div className="grid grid-cols-1 md:grid-cols-2">
-            <div className="bg-[#FFCC00] p-8 md:p-16">
+            <div className="bg-[##FFCd00] p-8 md:p-16">
               <h2 className="text-3xl sm:text-4xl font-bold mt-10 ml-6 mb-8">
                 Vamos <br />
                 conversar <br />
@@ -273,7 +273,7 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-            <div className="bg-[#0a1017] p-8 md:p-16">
+            <div className="bg-[#101820] p-8 md:p-16">
               <ContactForm />
             </div>
           </div>
