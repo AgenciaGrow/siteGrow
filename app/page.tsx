@@ -9,7 +9,6 @@ import {
   Mail,
   Instagram,
   Youtube,
-  Facebook,
 } from "lucide-react";
 import ParallaxSection from "@/app/_components/parallax-section";
 import ContactForm from "@/app/_components/contact-form";
@@ -252,7 +251,7 @@ export default function Home() {
                 marca?
               </h2>
               <Link
-                href="mailto:contato@shine.com.br"
+                href="#contato"
                 className="inline-flex items-center justify-center w-12 h-12 ml-6 bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-colors mb-8"
               >
                 <Mail size={20} />
@@ -262,14 +261,11 @@ export default function Home() {
                 contato com você e conheça mais sobre a sua empresa.
               </p>
               <div className="flex ml-6 space-x-4">
-                <Link href="#" className="text-gray-800 hover:text-gray-900">
+                <Link href="https://www.instagram.com/growmediamkt/" target="_blank" className="text-gray-800 hover:text-gray-900">
                   <Instagram size={20} />
                 </Link>
                 <Link href="#" className="text-gray-800 hover:text-gray-900">
                   <Youtube size={20} />
-                </Link>
-                <Link href="#" className="text-gray-800 hover:text-gray-900">
-                  <Facebook size={20} />
                 </Link>
               </div>
             </div>

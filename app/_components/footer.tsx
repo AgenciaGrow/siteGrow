@@ -1,6 +1,6 @@
 "use-client";
 
-import { Facebook, Instagram, Youtube } from 'lucide-react';
+import { Instagram, Youtube } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -49,7 +49,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="#"
+                  href="#home"
                   className="hover:text-gray-300 transition-colors"
                 >
                   HOME
@@ -57,7 +57,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="#sobre"
                   className="hover:text-gray-300 transition-colors"
                 >
                   SOBRE
@@ -65,7 +65,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="#estrategia"
                   className="hover:text-gray-300 transition-colors"
                 >
                   ESTRATÉGIAS
@@ -80,7 +80,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="#"
+                  href="#serviços"
                   className="hover:text-gray-300 transition-colors"
                 >
                   SERVIÇOS
@@ -88,7 +88,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="#contato"
                   className="hover:text-gray-300 transition-colors"
                 >
                   CONTATO
@@ -105,13 +105,8 @@ const Footer = () => {
         <div className="flex flex-col items-center">
           <div className="flex space-x-4 mb-4">
             <Link
-              href="#"
-              className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gray-700 transition-colors"
-            >
-              <Facebook size={16} />
-            </Link>
-            <Link
-              href="#"
+              href="https://www.instagram.com/growmediamkt/"
+              target='_blank'
               className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gray-700 transition-colors"
             >
               <Instagram size={16} />
