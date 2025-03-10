@@ -1,3 +1,5 @@
+"use-client";
+
 import { Facebook, Instagram, Youtube } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -9,7 +11,7 @@ const Footer = () => {
         {/* Top section with logo and navigation */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Logo section */}
-          <div className="flex justify-center">
+          <div>
             <Image
               src="/logo-grow.png"
               alt="logo agencia grow"

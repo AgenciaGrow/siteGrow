@@ -155,7 +155,7 @@ export default function Home() {
                 <h2 className="text-3xl sm:text-4xl font-bold mb-6">
                   Sua marca mais <br />
                   <span className="flex items-center">
-                    <ChevronRight className="text-[##FFCd00] mr-2" />
+                    <ChevronRight className="text-[#FFCd00] mr-2" />
                     conhecida,
                   </span>
                   <span className="flex items-center">
@@ -180,13 +180,13 @@ export default function Home() {
                 </p>
                 <Link
                   href="#contato"
-                  className="inline-flex hover:outline items-center bg-[##FFCd00] text-gray-900 px-6 py-3 rounded-full hover:bg-[#FFCC00] transition-colors"
+                  className="inline-flex hover:outline items-center bg-[#FFCd00] text-gray-900 px-6 py-3 rounded-full hover:bg-[#FFCC00] transition-colors"
                 >
                   Vamos conversar <ArrowRight className="ml-2" size={16} />
                 </Link>
               </div>
               <div className="relative grid grid-cols-2 gap-4">
-                <div className="h-24 w-24 bg-[##FFCd00] rounded-lg ml-auto"></div>
+                <div className="h-24 w-24 bg-[#FFCd00] rounded-lg ml-auto"></div>
                 <Image
                   src="/growLogoIcon.png"
                   alt="logo icone grow"
@@ -194,19 +194,19 @@ export default function Home() {
                   height={100}
                   className="absolute z-50 ml-20 sm:ml-0 left-1/2 transform -translate-x-1/2 sm:left-auto sm:transform-none"
                 />
-                <div className="h-24 w-24 bg-[##FFCd00] rounded-lg mt-24"></div>
+                <div className="h-24 w-24 bg-[#FFCd00] rounded-lg mt-24"></div>
               </div>
             </div>
           </div>
         </ParallaxSection>
 
         {/* sessão clientes */}
-        <ParallaxSection id="clientes" className="bg-[#101820] text-white border-t border-gray-800">
+        <ParallaxSection id="clientes" className="bg-[#EAE9E8] text-white border-t border-gray-800">
           <div className="container mx-auto px-4 sm:px-10 md:px-24 py-16">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#101820] mb-12">
               Empresas que <br />
               <span className="flex items-center">
-                <ChevronRight className="text-[#101820] mr-2" />
+                <ChevronRight className="text-[#FFCd00] mr-2" />
                 confiam no
               </span>
               <span>nosso trabalho</span>
@@ -244,7 +244,7 @@ export default function Home() {
         {/* sessaõ contatos */}
         <section id="contato" className="relative">
           <div className="grid grid-cols-1 md:grid-cols-2">
-            <div className="bg-[##FFCd00] p-8 md:p-16">
+            <div className="bg-[#FFCC00] p-8 md:p-16">
               <h2 className="text-3xl sm:text-4xl font-bold mt-10 ml-6 mb-8">
                 Vamos <br />
                 conversar <br />
