@@ -1,130 +1,64 @@
-"use-client";
+import Link from "next/link"
+import Image from "next/image";
+import { Youtube, Instagram  } from "lucide-react"
 
-import { Instagram, Youtube } from 'lucide-react';
-import Image from 'next/image';
-import Link from 'next/link';
-
-const Footer = () => {
+export default function Footer() {
   return (
-    <footer className="bg-[#0a1017] text-white py-12 px-6 z-50">
-      <div className="max-w-6xl mx-auto">
-        {/* Top section with logo and navigation */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-          {/* Logo section */}
-          <div>
-            <Image
-              src="/logo-grow.png"
-              alt="logo agencia grow"
-              width={200}
-              height={100}
-            />
+    <footer className="bg-[#101820] h-full text-white py-6 px-8">
+      <div className="container mx-auto">
+        <div className="flex flex-col space-y-6">
+          <div className="flex flex-wrap items-center justify-between">
+            {/* Logo */}
+            <div className="flex items-center">
+              <Image
+                src="/logo-grow.png"
+                alt="logo grow media"
+                width={200}
+                height={100}
+                className="md:ml-36"
+              />
+            </div>
+
+            {/* Navigation */}
+            <nav className="hidden md:flex items-center space-x-8 text-sm">
+              <Link href="#" className="text-gray-300 hover:text-white transition-colors">
+                Home
+              </Link>
+              <Link href="#sobre" className="text-gray-300 hover:text-white transition-colors">
+                Sobre
+              </Link>
+              <Link href="#estrategias" className="text-gray-300 hover:text-white transition-colors">
+                Estratégias
+              </Link>
+              <Link href="#serviços" className="text-gray-300 hover:text-white transition-colors">
+                Serviços
+              </Link>
+              <Link href="#contato" className="text-gray-300 hover:text-white transition-colors">
+                Contato
+              </Link>
+            </nav>
+
+            {/* Social Icons */}
+            <div className="flex items-center space-x-4 md:mr-36">
+              <Link href="https://www.instagram.com/growmediamkt/" target="_blank" className="text-gray-300 hover:text-white transition-colors">
+                <Instagram  size={18} />
+              </Link> 
+              <Link href="#" className="text-gray-300 hover:text-white transition-colors">
+                <Youtube size={18} />
+              </Link>
+            </div>
           </div>
 
-          {/* Links section */}
-          <div className="text-center md:text-left">
-            <h3 className="font-semibold mb-4">Links Rápidos</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  href="#clientes"
-                  className="hover:text-gray-300 transition-colors"
-                >
-                  Clientes
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#nosso-time"
-                  className="hover:text-gray-300 transition-colors"
-                >
-                  Nosso Time
-                </Link>
-              </li>
-            </ul>
-          </div>
+          {/* Divider */}
+          <div className="border-t border-gray-700"></div>
 
-          {/* More links section */}
-          <div className="text-center md:text-left">
-            <h3 className="font-semibold mb-4">Navegação</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  href="#home"
-                  className="hover:text-gray-300 transition-colors"
-                >
-                  HOME
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#sobre"
-                  className="hover:text-gray-300 transition-colors"
-                >
-                  SOBRE
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#estrategia"
-                  className="hover:text-gray-300 transition-colors"
-                >
-                  ESTRATÉGIAS
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Services links section */}
-          <div className="text-center md:text-left">
-            <h3 className="font-semibold mb-4">Serviços</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  href="#serviços"
-                  className="hover:text-gray-300 transition-colors"
-                >
-                  SERVIÇOS
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#contato"
-                  className="hover:text-gray-300 transition-colors"
-                >
-                  CONTATO
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Divisão do footer */}
-        <div className="border-t border-gray-800 my-6"></div>
-
-        {/* Redes Sociais e Copyright */}
-        <div className="flex flex-col items-center">
-          <div className="flex space-x-4 mb-4">
-            <Link
-              href="https://www.instagram.com/growmediamkt/"
-              target='_blank'
-              className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gray-700 transition-colors"
-            >
-              <Instagram size={16} />
-            </Link>
-            <Link
-              href="#"
-              className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gray-700 transition-colors"
-            >
-              <Youtube size={16} />
-            </Link>
-          </div>
-          <div className="text-sm text-gray-400">
-            ©Copyright. All rights reserved.
+          {/* Copyright */}
+          <div className="text-xs text-gray-400 text-center">
+            ©Grow Media {new Date().getFullYear()}, Todos os direitos reservados.
           </div>
         </div>
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;

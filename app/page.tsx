@@ -25,7 +25,7 @@ export default function Home() {
         {/* menu fixo */}
         <nav className="fixed top-0 left-0 right-0 z-50 bg-[#101820] bg-opacity-95 pl-5 pr-5 py-4 sm:px-10 md:px-20">
           <div className="container mx-auto flex items-center justify-between px-4">
-            <div className="flex items-center">
+            <div className="flex items-center md:ml-28">
               <Link href="/">
                 <Image
                   src="/logo-grow.png"
@@ -35,7 +35,7 @@ export default function Home() {
                 />
               </Link>
             </div>
-            <div className="hidden md:flex space-x-10 text-[12px]">
+            <div className="hidden md:flex space-x-10 md:mr-28 text-[12px]">
               <Link
                 href="#home"
                 className="text-yellow-400 hover:text-yellow-300"
@@ -111,21 +111,21 @@ export default function Home() {
           <div className="container mx-auto px-4 sm:px-10 md:px-24 py-20 mt-16">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-4xl sm:text-5xl font-semibold mb-2 text-gray-800 flex flex-row items-center sm:flex-col sm:items-start">
+                <h2 className="text-4xl md:ml-28 sm:text-5xl font-semibold mb-2 text-gray-800 flex flex-row items-center sm:flex-col sm:items-start">
                   Sobre
                   <div className="flex gap-1">
                     <span className="text-4xl ml-2">a</span>
                     <span className="text-4xl">Grow</span>
                   </div>
                 </h2>
-                <p className="my-6 text-gray-800 text-[16px]">
+                <p className="my-6 md:ml-28 text-gray-800 text-[16px]">
                   A Grow é uma agência de marketing digital focada em
                   resultados. Nosso objetivo é promover o crescimento real e
                   mensurável da sua empresa através de estratégias
                   personalizadas que impactam diretamente nos negócios e no
                   número de vendas para seu negócio.
                 </p>
-                <p className="my-6 text-gray-800 text-[16px]">
+                <p className="my-6 md:ml-28 text-gray-800 text-[16px]">
                   Acreditamos que ter um planejamento estratégico é parte
                   essencial do crescimento sólido profissional. Somos de
                   Florianópolis e atendemos todo o Brasil. Nosso time é
@@ -133,7 +133,7 @@ export default function Home() {
                   para cada cliente e ter um relacionamento próximo com eles.
                 </p>
               </div>
-              <div className="relative">
+              <div className="relative md:mr-28">
                 <Image
                   src="/mkt.webp"
                   alt="Marketing equipment"
@@ -150,7 +150,7 @@ export default function Home() {
         <ParallaxSection id="estrategia" className="bg-[#101820] text-white">
           <div className="container mx-auto mt-10 px-4 sm:px-10 md:px-24 py-20">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div>
+              <div className="md:ml-28">
                 <h2 className="text-3xl sm:text-4xl font-bold mb-6">
                   Sua marca mais <br />
                   <span className="flex items-center">
@@ -201,7 +201,7 @@ export default function Home() {
 
         {/* sessão clientes */}
         <ParallaxSection id="clientes" className="bg-[#EAE9E8] text-white border-t border-gray-800">
-          <div className="container mx-auto px-4 sm:px-10 md:px-24 py-16">
+          <div className="container mx-auto px-4 sm:px-10 md:ml-28 md:px-24 py-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-[#101820] mb-12">
               Empresas que <br />
               <span className="flex items-center">
@@ -216,7 +216,7 @@ export default function Home() {
 
         {/* sessão serviços */}
         <ParallaxSection id="serviços" className="bg-[#101820] ">
-          <div className="container mt-20 mx-auto px-4 sm:px-10 md:px-24 py-16">
+          <div className="container md:ml-28 mt-20 mx-auto px-4 sm:px-10 md:px-24 py-16">
             <h2 className="text-3xl text-white sm:text-4xl font-bold mb-2">
               Confira Nosso
               <br />
@@ -231,7 +231,7 @@ export default function Home() {
 
         {/* sessão Nosso Time */}
         <ParallaxSection id="nosso-time" className="bg-gray-100">
-          <div className="container mx-auto px-4 sm:px-10 md:px-24 py-16">
+          <div className="container md:ml-28 mx-auto px-4 sm:px-10 md:px-24 py-16">
             <h2 className="flex items-center text-2xl sm:text-3xl font-bold mb-12">
               <ArrowRight className="text-yellow-[#FFCC00] mr-2" />
               Nosso Time
@@ -244,7 +244,7 @@ export default function Home() {
         <section id="contato" className="relative">
           <div className="grid grid-cols-1 md:grid-cols-2">
             <div className="bg-[#FFCC00] p-8 md:p-16">
-              <h2 className="text-3xl sm:text-4xl font-bold mt-10 ml-6 mb-8">
+              <h2 className="text-3xl md:ml-36 sm:text-4xl font-bold mt-10 ml-6 mb-8">
                 Vamos <br />
                 conversar <br />
                 sobre a sua <br />
@@ -252,19 +252,19 @@ export default function Home() {
               </h2>
               <Link
                 href="#contato"
-                className="inline-flex items-center justify-center w-12 h-12 ml-6 bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-colors mb-8"
+                className="inline-flex md:ml-36 items-center justify-center w-12 h-12 ml-6 bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-colors mb-8"
               >
                 <Mail size={20} />
               </Link>
-              <p className="text-sm sm:text-base max-w-xs ml-6 mb-12">
+              <p className="text-sm md:ml-36 sm:text-base max-w-xs ml-6 mb-12">
                 Preencha o formulário ao lado para que nossa equipe entre em
                 contato com você e conheça mais sobre a sua empresa.
               </p>
-              <div className="flex ml-6 space-x-4">
+              <div className="flex md:ml-36 ml-6 space-x-4">
                 <Link href="https://www.instagram.com/growmediamkt/" target="_blank" className="text-gray-800 hover:text-gray-900">
                   <Instagram size={20} />
                 </Link>
-                <Link href="#" className="text-gray-800 hover:text-gray-900">
+                <Link href="#" className="text-gray-800 md:ml-36 hover:text-gray-900">
                   <Youtube size={20} />
                 </Link>
               </div>

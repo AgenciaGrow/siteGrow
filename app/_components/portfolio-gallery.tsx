@@ -2,13 +2,7 @@ import Image from "next/image";
 
 export default function PortfolioGallery() {
   return (
-    <div className="min-h-screen  text-white">
-      {/* Header */}
-      <header className="relative flex flex-col items-center justify-center pt-16 pb-8">
-        <div className="flex flex-col items-center">
-          <div className="w-12 h-0.8 bg-white mt-2"></div>
-        </div>
-      </header>
+    <div className="min-h-screen md:mr-52 text-white">
 
       {/* Gallery Grid */}
       <div className="container mx-auto px-4 py-8">

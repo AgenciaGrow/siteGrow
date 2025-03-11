@@ -16,7 +16,7 @@ const ClientLogos = () => {
   ];
 
   return (
-    <section className="py-12 bg-[#EAE9E8]">
+    <section className="py-12 md:mr-52 bg-[#EAE9E8]">
       <div className="container mx-auto px-4">
         <Swiper
           modules={[Autoplay]}

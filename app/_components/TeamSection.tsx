@@ -44,7 +44,7 @@ const TeamSection = () => {
   ];
 
   return (
-    <section className="py-12">
+    <section className="py-12 md:mr-52">
       <div className="container mx-auto px-4">
         <Swiper
           modules={[Autoplay]}
