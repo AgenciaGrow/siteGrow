@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
+import { CheckedState } from "@radix-ui/react-checkbox";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -20,13 +21,15 @@ export default function ContactForm() {
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState("");
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleCheckboxChange = (checked: boolean) => {
-    setFormData((prev) => ({ ...prev, consent: checked }));
+  const handleCheckboxChange = (checked: CheckedState) => {
+    setFormData((prev) => ({ ...prev, consent: checked === true }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -37,12 +40,18 @@ export default function ContactForm() {
       return;
     }
 
+    const formspreeEndpoint = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT;
+    if (!formspreeEndpoint) {
+      setError("Erro de configuração: ENDPOINT não definido.");
+      return;
+    }
+
     setIsSubmitting(true);
     setError("");
     setIsSuccess(false);
 
     try {
-      const response = await fetch(process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT, {
+      const response = await fetch(formspreeEndpoint, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -63,7 +72,8 @@ export default function ContactForm() {
       } else {
         setError("Erro ao enviar o email. Por favor, tente novamente.");
       }
-    } catch (error) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (err) {
       setError("Erro ao enviar o email. Por favor, tente novamente.");
     } finally {
       setIsSubmitting(false);
@@ -73,7 +83,10 @@ export default function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-4 md:mr-36">
       <div className="mt-10">
-        <label htmlFor="name" className="block text-sm md:mr-52 text-gray-400 mb-1">
+        <label
+          htmlFor="name"
+          className="block text-sm md:mr-52 text-gray-400 mb-1"
+        >
           Nome
         </label>
         <Input
@@ -164,11 +177,11 @@ export default function ContactForm() {
       </Button>
 
       {isSuccess && (
-        <p className="text-green-500 text-sm mt-2">email enviado com sucesso!</p>
+        <p className="text-green-500 text-sm mt-2">
+          Email enviado com sucesso!
+        </p>
       )}
-      {error && (
-        <p className="text-red-500 text-sm mt-2">{error}</p>
-      )}
+      {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
     </form>
   );
 }
