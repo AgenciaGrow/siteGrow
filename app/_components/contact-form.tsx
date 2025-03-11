@@ -1,12 +1,10 @@
 "use client";
 
-import type React from "react"
-
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Checkbox } from "@/components/ui/checkbox"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Checkbox } from "@/components/ui/checkbox";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -16,22 +14,61 @@ export default function ContactForm() {
     company: "",
     message: "",
     consent: false,
-  })
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [error, setError] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
   const handleCheckboxChange = (checked: boolean) => {
-    setFormData((prev) => ({ ...prev, consent: checked }))
-  }
+    setFormData((prev) => ({ ...prev, consent: checked }));
+  };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log("Form submitted:", formData)
-    // Add your form submission logic here
-  }
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!formData.consent) {
+      alert("Por favor, concorde com os termos antes de enviar.");
+      return;
+    }
+
+    setIsSubmitting(true);
+    setError("");
+    setIsSuccess(false);
+
+    try {
+      const response = await fetch(process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setIsSuccess(true);
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          company: "",
+          message: "",
+          consent: false,
+        });
+      } else {
+        setError("Erro ao enviar o email. Por favor, tente novamente.");
+      }
+    } catch (error) {
+      setError("Erro ao enviar o email. Por favor, tente novamente.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
@@ -118,10 +155,20 @@ export default function ContactForm() {
         </label>
       </div>
 
-      <Button type="submit" className="w-full bg-[#FFCC00] hover:bg-[#FFCC00] text-gray-900 font-medium">
-        Enviar
+      <Button
+        type="submit"
+        className="w-full bg-[#FFCC00] hover:bg-[#FFCC00] text-gray-900 font-medium"
+        disabled={isSubmitting}
+      >
+        {isSubmitting ? "Enviando..." : "Enviar"}
       </Button>
-    </form>
-  )
-}
 
+      {isSuccess && (
+        <p className="text-green-500 text-sm mt-2">email enviado com sucesso!</p>
+      )}
+      {error && (
+        <p className="text-red-500 text-sm mt-2">{error}</p>
+      )}
+    </form>
+  );
+}
