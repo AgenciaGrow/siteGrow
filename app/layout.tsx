@@ -18,8 +18,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className="scroll-smooth">
-      <body className={poppins.className}>{children}</body>
       <Analytics />
+      <body className={poppins.className}>{children}</body>
     </html>
   )
 }

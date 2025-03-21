@@ -41,6 +41,7 @@ export default function ContactForm() {
     }
 
     const formspreeEndpoint = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT;
+    console.log("Endpoint:", formspreeEndpoint);
     if (!formspreeEndpoint) {
       setError("Erro de configuração: ENDPOINT não definido.");
       return;
