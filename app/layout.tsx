@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Poppins } from "next/font/google"
 import "./globals.css"
+import { Analytics } from "@vercel/analytics/react"
 
 const poppins = Poppins({ weight: ["400", "500"], subsets: ["latin"] })
 
@@ -18,6 +19,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className="scroll-smooth">
       <body className={poppins.className}>{children}</body>
+      <Analytics />
     </html>
   )
 }
